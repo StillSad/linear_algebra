@@ -147,4 +147,3 @@ class LinearRegressionTestCase(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-math.su
