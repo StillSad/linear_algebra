@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[209]:
+# In[50]:
 
 
 # 任意选一个你喜欢的整数，这能帮你得到稳定的结果
@@ -20,7 +20,7 @@ seed = 9999
 # 
 # ## 1.1 创建一个 4*4 的单位矩阵
 
-# In[210]:
+# In[51]:
 
 
 # 这个项目设计来帮你熟悉 python list 和线性代数
@@ -50,7 +50,7 @@ I = [[1,0,0,0],
 
 # ## 1.2 返回矩阵的行数和列数
 
-# In[211]:
+# In[52]:
 
 
 # TODO 返回矩阵的行数和列数
@@ -58,7 +58,7 @@ def shape(M):
     return len(M),len(M[0])
 
 
-# In[212]:
+# In[53]:
 
 
 # 运行以下代码测试你的 shape 函数
@@ -67,7 +67,7 @@ get_ipython().magic('run -i -e test.py LinearRegressionTestCase.test_shape')
 
 # ## 1.3 每个元素四舍五入到特定小数数位
 
-# In[213]:
+# In[54]:
 
 
 # TODO 每个元素四舍五入到特定小数数位
@@ -79,7 +79,7 @@ def matxRound(M, decPts=4):
             M[i][j] = round(M[i][j],decPts)
 
 
-# In[214]:
+# In[55]:
 
 
 # 运行以下代码测试你的 matxRound 函数
@@ -88,7 +88,7 @@ get_ipython().magic('run -i -e test.py LinearRegressionTestCase.test_matxRound')
 
 # ## 1.4 计算矩阵的转置
 
-# In[215]:
+# In[56]:
 
 
 # TODO 计算矩阵的转置
@@ -96,7 +96,7 @@ def transpose(M):
     return [list(row) for row in zip(*M)]
 
 
-# In[216]:
+# In[57]:
 
 
 # 运行以下代码测试你的 transpose 函数
@@ -105,7 +105,7 @@ get_ipython().magic('run -i -e test.py LinearRegressionTestCase.test_transpose')
 
 # ## 1.5 计算矩阵乘法 AB
 
-# In[217]:
+# In[58]:
 
 
 # TODO 计算矩阵乘法 AB，如果无法相乘则raise ValueError
@@ -133,7 +133,7 @@ def towListSum(ARow, BColumn):
     return item
 
 
-# In[218]:
+# In[59]:
 
 
 # 运行以下代码测试你的 matxMultiply 函数
@@ -167,7 +167,7 @@ get_ipython().magic('run -i -e test.py LinearRegressionTestCase.test_matxMultipl
 #     ...    & ... & ... & ...& ...\\
 #     a_{n1}    & a_{n2} & ... & a_{nn} & b_{n} \end{bmatrix}$
 
-# In[219]:
+# In[60]:
 
 
 # TODO 构造增广矩阵，假设A，b行数相同
@@ -178,7 +178,7 @@ def augmentMatrix(A, b):
     return newList
 
 
-# In[220]:
+# In[61]:
 
 
 # 运行以下代码测试你的 augmentMatrix 函数
@@ -190,7 +190,7 @@ get_ipython().magic('run -i -e test.py LinearRegressionTestCase.test_augmentMatr
 # - 把某行乘以一个非零常数
 # - 把某行加上另一行的若干倍：
 
-# In[221]:
+# In[62]:
 
 
 # TODO r1 <---> r2
@@ -202,14 +202,14 @@ def swapRows(M, r1, r2):
  
 
 
-# In[222]:
+# In[63]:
 
 
 # 运行以下代码测试你的 swapRows 函数
 get_ipython().magic('run -i -e test.py LinearRegressionTestCase.test_swapRows')
 
 
-# In[223]:
+# In[64]:
 
 
 # TODO r1 <--- r1 * scale
@@ -222,14 +222,14 @@ def scaleRow(M, r, scale):
         M[r][i] *= scale
 
 
-# In[224]:
+# In[65]:
 
 
 # 运行以下代码测试你的 scaleRow 函数
 get_ipython().magic('run -i -e test.py LinearRegressionTestCase.test_scaleRow')
 
 
-# In[225]:
+# In[66]:
 
 
 # TODO r1 <--- r1 + r2*scale
@@ -239,7 +239,7 @@ def addScaledRow(M, r1, r2, scale):
         M[r1][i] += M[r2][i] * scale
 
 
-# In[226]:
+# In[67]:
 
 
 # 运行以下代码测试你的 addScaledRow 函数
@@ -312,7 +312,7 @@ get_ipython().magic('run -i -e test.py LinearRegressionTestCase.test_addScaledRo
 
 # #### 以下开始你的尝试吧!
 
-# In[227]:
+# In[68]:
 
 
 # 不要修改这里！
@@ -335,23 +335,28 @@ printInMatrixFormat(Ab,padding=3,truncating=0)
 # 
 # 
 # $ Ab = \begin{bmatrix}
-#     0 & 0 & 0 & 0 \\
-#     0 & 0 & 0 & 0 \\
-#     0 & 0 & 0 & 0 \end{bmatrix}$
-# 
-# $ --> \begin{bmatrix}
-#     0 & 0 & 0 & 0 \\
-#     0 & 0 & 0 & 0 \\
-#     0 & 0 & 0 & 0 \end{bmatrix}$
+#     7 & 5 & 3 & 1 \\
+#     -5 & -4 & 6 & 1 \\
+#     2 & -2 & -9 & 1 \end{bmatrix}$
 #     
 # $ --> \begin{bmatrix}
-#     0 & 0 & 0 & 0 \\
-#     0 & 0 & 0 & 0 \\
-#     0 & 0 & 0 & 0 \end{bmatrix}$
+#     1 & \frac{5}{7} & \frac{3}{7} & \frac{1}{7} \\
+#     0 & -\frac{3}{7} & \frac{57}{7} & \frac{12}{7} \\
+#     0 & -\frac{24}{7} & -\frac{69}{7} & \frac{5}{7} \end{bmatrix}$
+# 
+# $ --> \begin{bmatrix}
+#     1 & 0 & -\frac{13}{8} & \frac{7}{24} \\
+#     0 & 1 & \frac{23}{8} & -\frac{5}{24} \\
+#     0 & 0 & \frac{75}{8} & \frac{13}{8} \end{bmatrix}$
+#     
+# $ --> \begin{bmatrix}
+#     1 & 0 & 0 & \frac{43}{75} \\
+#     0 & 1 & 0 & -\frac{53}{75} \\
+#     0 & 0 & 1 & \frac{13}{75} \end{bmatrix}$
 #     
 # $...$
 
-# In[228]:
+# In[69]:
 
 
 # 不要修改这里！
@@ -359,6 +364,7 @@ A = generateMatrix(3,seed,singular=True)
 b = np.ones(shape=(3,1),dtype=int)
 Ab = augmentMatrix(A.tolist(),b.tolist()) # 请确保你的增广矩阵已经写好了
 printInMatrixFormat(Ab,padding=3,truncating=0)
+gj_Solve(A.tolist(),b.tolist())
 
 
 # 请按照算法的步骤3，逐步推演***奇异矩阵***的变换。
@@ -373,25 +379,25 @@ printInMatrixFormat(Ab,padding=3,truncating=0)
 # 
 # 
 # $ Ab = \begin{bmatrix}
-#     0 & 0 & 0 & 0 \\
-#     0 & 0 & 0 & 0 \\
-#     0 & 0 & 0 & 0 \end{bmatrix}$
+#     -1 & 6 & -8 & 1 \\
+#     -10 & -5 & 5 & 1 \\
+#     -9 & 2 & -4 & 1 \end{bmatrix}$
 # 
 # $ --> \begin{bmatrix}
-#     0 & 0 & 0 & 0 \\
-#     0 & 0 & 0 & 0 \\
-#     0 & 0 & 0 & 0 \end{bmatrix}$
+#     1 & \frac{1}{2} & -\frac{1}{2} & -\frac{1}{10} \\
+#     0 & \frac{13}{2} & -\frac{17}{2} & \frac{9}{10} \\
+#     0 & \frac{13}{2} & -\frac{17}{2} & \frac{1}{10} \end{bmatrix}$
 #     
 # $ --> \begin{bmatrix}
-#     0 & 0 & 0 & 0 \\
-#     0 & 0 & 0 & 0 \\
-#     0 & 0 & 0 & 0 \end{bmatrix}$
+#     1 & 0 & \frac{2}{13} & -\frac{11}{65} \\
+#     0 & 1 & -\frac{17}{13} & \frac{9}{65} \\
+#     0 & 0 & 0 & -\frac{52}{65} \end{bmatrix}$
 #     
 # $...$
 
 # ### 2.3.3 实现 Gaussian Jordan 消元法
 
-# In[263]:
+# In[70]:
 
 
 # TODO 实现 Gaussain Jordan 方法求解 Ax = b
@@ -408,7 +414,7 @@ printInMatrixFormat(Ab,padding=3,truncating=0)
     返回None，如果 A 为奇异矩阵
 """
 from math import fabs
-
+ 
 def gj_Solve(A, b, decPts=4, epsilon = 1.0e-16):
 
    
@@ -417,8 +423,7 @@ def gj_Solve(A, b, decPts=4, epsilon = 1.0e-16):
         return None
     #步骤2 构造增广矩阵Ab
     Ab = augmentMatrix(A,b)
-    #步骤3逐列转换Ab为化简行阶梯形矩阵  
-
+    #步骤3逐列转换Ab为化简行阶梯形矩阵 
     rowNum,columnNum = shape(Ab)
     for c in range(columnNum):
         
@@ -428,6 +433,7 @@ def gj_Solve(A, b, decPts=4, epsilon = 1.0e-16):
         if len(col) == 0:
             continue
         max_val = max(col, key=fabs)
+        
         if fabs(max_val) < epsilon: return None # 奇异检查
         max_idx = col.index(max_val) + c 
         
@@ -440,13 +446,12 @@ def gj_Solve(A, b, decPts=4, epsilon = 1.0e-16):
         for i in range(len(Ab)):
             if i != c and Ab[i][c] != 0:
                 addScaledRow(Ab,i,c,-Ab[i][c])
-        
     matxRound(Ab)
 
     return [[row[-1]] for row in Ab]
 
 
-# In[264]:
+# In[71]:
 
 
 # 运行以下代码测试你的 gj_Solve 函数
@@ -481,7 +486,7 @@ get_ipython().magic('run -i -e test.py LinearRegressionTestCase.test_gj_Solve')
 
 # ## 3.1 随机生成样本点
 
-# In[265]:
+# In[72]:
 
 
 # 不要修改这里！
@@ -504,7 +509,7 @@ plt.show()
 # 
 # ### 3.2.1 猜测一条直线
 
-# In[266]:
+# In[73]:
 
 
 #TODO 请选择最适合的直线 y = mx + b
@@ -531,7 +536,7 @@ plt.show()
 # MSE = \frac{1}{n}\sum_{i=1}^{n}{(y_i - mx_i - b)^2}
 # $$
 
-# In[267]:
+# In[74]:
 
 
 # TODO 实现以下函数并输出所选直线的MSE
